@@ -5,6 +5,7 @@ import LoginComponent from './components/loginComponent';
 import RegisterComponent from './components/registerComponent';
 import DashboardComponent from './components/dashboardComponent';
 import PrivateRoute from './components/privateRouteComponent';
+import notFound from './components/notFound';
 
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 
@@ -34,6 +35,7 @@ class App extends React.Component {
             <Route path="/login" exact component={LoginComponent}></Route>
             <Route path="/register" exact component={RegisterComponent}></Route>
             <PrivateRoute path="/dashboard" exact component={DashboardComponent} />
+            <Route path='*' exact={true} component={notFound} />
           </Switch>
         </Router>
       </div>
